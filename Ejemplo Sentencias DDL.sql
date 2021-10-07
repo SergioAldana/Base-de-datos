@@ -48,6 +48,8 @@ INSERT INTO producto (pId, pNombre, tpCodigo)
 VALUES (4, ‘Naranja tangelo’, 4);
 INSERT INTO producto (pId, pNombre, tpCodigo)
 VALUES (5, ‘Coco’, 4);
+INSERT INTO producto (pId, pNombre, tpCodigo)
+VALUES (6, ‘Papaya’, 1);
 
 INSERT INTO empleado (eCodigo, eNombre, eTelefono, eCorreo,eSueldo, teId)
 VALUES (1, ’JoseNose’, ‘3225347452’, ’josenose@gmail.com’,1500000, 2);
@@ -60,16 +62,19 @@ VALUES (4, ’JuanaArmando’, ’3225347452’, ’juanarma@hotmail.com’, 140
 INSERT INTO empleado (eCodigo, eNombre, eTelefono, eCorreo, eSueldo, teId)
 VALUES (5, ’MariaRogelia’, ’3225347452’, ’mariarogelia@gmail.com’, 1350000, 3 );
 
-INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra)
-VALUES (1,100, 1800000, SYSDATE);
-INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra)
-VALUES (2,50, 1250000, SYSDATE);
-INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra)
-VALUES (3,60, 2000000, SYSDATE);
-INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra)
-VALUES (4,150, 3100000, SYSDATE);
-INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra)
-VALUES (5,200, 4000000, SYSDATE);
+INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra, pId)
+VALUES (1,100, 1800000, SYSDATE, 5);
+INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra, pId)
+VALUES (2,50, 1250000, SYSDATE, 1);
+INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra, pId)
+VALUES (3,60, 2000000, SYSDATE, 6);
+INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra, pId)
+VALUES (4,150, 3100000, SYSDATE, 4);
+INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra, pId)
+VALUES (5,200, 4000000, SYSDATE,4);
+INSERT INTO compra (cCodigo, cNumero, cPrecio, fechaCompra, pId)
+VALUES (6,70, 1500000, SYSDATE,3);
+
 
 INSERT INTO detalle_compra (dcId, fechaEntrega, cCodigo)
 VALUES (1, SYSDATE, 1);
@@ -81,6 +86,9 @@ INSERT INTO detalle_compra (dcId, fechaEntrega, cCodigo)
 VALUES (4, SYSDATE, 4);
 INSERT INTO detalle_compra (dcId, fechaEntrega, cCodigo)
 VALUES (5, SYSDATE, 5);
+INSERT INTO detalle_compra (dcId, fechaEntrega, cCodigo)
+VALUES (6, SYSDATE, 6);
+
 
 INSERT INTO inventario (codigoBarras, iPeso, estado, eCodigo, pId, dcId)
 VALUES (123456789012, 200, ‘Disponible’,  1, 1, 1);
@@ -92,6 +100,9 @@ INSERT INTO inventario (codigoBarras, iPeso, estado, eCodigo, pId, dcId)
 VALUES (123456789015, 350, ‘Disponible’,  2, 4, 4);
 INSERT INTO inventario (codigoBarras, iPeso, estado, eCodigo, pId, dcId)
 VALUES (123456789016, 400, ‘Disponible’,  2, 5, 5);
+INSERT INTO inventario (codigoBarras, iPeso, estado, eCodigo, pId, dcId)
+VALUES (123456789017, 200, ‘Disponible’,  1, 6, 6);
+
 
 INSERT INTO venta (vCodigo, vNumero, vPrecio)
 VALUES (1, 100, 1800000);
@@ -136,8 +147,6 @@ INSERT INTO empleado_venta (eCodigo, vCodigo)
 VALUES (4, 4);
 INSERT INTO empleado_venta (eCodigo, vCodigo)
 VALUES (5, 5);
-
-
 
 INSERT INTO cliente_venta (vCodigo, cNit)
 VALUES (1, 1111111111);
