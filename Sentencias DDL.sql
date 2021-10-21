@@ -63,6 +63,7 @@ pNit NUMBER (10),
 pNombreCompleto VARCHAR2 (45) NOT NULL,
 pTelefonoCelular VARCHAR2 (10) NOT NULL,
 pCorreo VARCHAR2 (320) NOT NULL);
+
 ALTER TABLE DETALLE_VENTA
 ADD CONSTRAINT codigoBarras_detalle_venta_uk UNIQUE (codigoBarras);
 ALTER TABLE INVENTARIO
