@@ -4,6 +4,8 @@ INSERT INTO tipo_empleado (teId, teRol)
 VALUES (2, ‘EncargadodelAlmacén’);
 INSERT INTO tipo_empleado (teId, teRol)
 VALUES (3, ‘Vendedor’);
+INSERT INTO tipo_empleado (teId, teRol)
+VALUES (4, ‘Gerente’);
 
 INSERT INTO proveedor (pNit, pNombreCompleto, pTelefonoCelular, pCorreo)
 VALUES (1400969772, ‘AcquaFruta’, 3212256548, ‘acqua.fruta@gmail.com’);
